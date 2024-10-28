@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#labirinto {
+    display: grid;
+    grid-template-columns: repeat(16, 40px); /* Estrutura 16x8 */
+    gap: 5px;
+    margin-top: 20px;
+    padding: 5px;
+    border: 3px solid #000; /* Borda ao redor do labirinto */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+.cell.entrada::before {
+    content: "⬆";
+    font-size: 24px;
+    color: black;
+}
+
+.cell.saida::after {
+    content: "⬇";
+    font-size: 24px;
+    color: black;
+}
+
+
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.cell.amarela {
+    background-color: yellow;
+    border: 1px solid #000;
+}
+
+.cell.verde {
+    background-color: green;
+    border: 1px solid #000;
+}
+
+.cell.block {
+    background-color: black;
+}
+
+.cell.selected {
+    background-color: lightblue; /* Cor para destacar o caminho */
+}
+
+.cell.amarela.selected {
+    background-color: yellow; /* Mantém a cor amarela */
+}
+
+.cell.verde.selected {
+    background-color: green; /* Mantém a cor verde */
+}
